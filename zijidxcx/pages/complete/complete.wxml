@@ -1,0 +1,88 @@
+
+<!-- 九宫格 -->
+<template name="jiugongge">
+  <view class='index-nav'>
+    <block wx:for="{{jiu}}" wx:key="index" wx:key='{{item.fid}}'>
+      <view class='nav-item'>
+        <image src='{{item.pic}}' mode='aspectFill' lazy-load bindtap="toproductinfo" data-fid='{{item.fid}}'></image>
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+</template>
+<!-- 个人中心九宫格 -->
+<template name="myNine">
+  <view class='index-nav'>
+    <block wx:for="{{mynine}}" wx:key="index">
+      <view class='nav-item'>
+        <text class='{{item.cl}}'></text>
+        <text class='itemNmae'>{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+</template>
+<!-- 轮播图 -->
+<template name="banner">
+  <swiper autoplay interval='3000' indicator-dots>
+    <block wx:for="{{list}}" wx:key="index">
+      <swiper-item>
+        <image mode="scaleToFill" src='{{item}}' lazy-load />
+      </swiper-item>
+    </block>
+  </swiper>
+</template>
+<!-- 单个商品 -->
+<template name="oddpro">
+  <view class='prolist'>
+    <view class='ftitle'>
+      <view class='ldiv'></view>
+      <text class='protitle'>{{ftitle}}</text>
+    </view>
+    <view class='proinfo' bindtap='toproinfo' wx:for='{{pro}}' wx:key='{{item.id}}' data-idx='{{item.id}}'>
+      <image src='{{item.pic}}' mode='aspectFill' lazy-load></image>
+      <view class='shopinfo'>
+        <view class='shoptitle'>
+          <text class='title'>{{item.title}}</text>
+        </view>
+        <view class='shopprice'>
+          <text class='price'>￥{{item.price}}</text>
+        </view>
+        <view class='shopbottom'>
+          <text class='shopcount'>销量：{{item.volume}}</text>
+          <text class='iconfont icon-jiarugouwuche' catchtap='addcart' data-id="2"></text>
+        </view>
+      </view>
+    </view> 
+  </view>
+</template>
+
+<!-- 控制商品数量加减 -->
+<template name="count">
+  <view class='procount'>
+    <text class='ofadd' catchtap='ofadd'>-</text>
+    <text class='count'>{{count}}</text>
+    <text class='add' catchtap='add'>+</text>
+  </view>
+</template>
+
+<!-- 点击弹框 -->
+<template name="tank">
+  <!--屏幕背景变暗的背景 -->
+  <view class="commodity_screen" wx:if="{{showModalStatus}}"></view>
+  <!--弹出框 -->
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view class='tank divider'>
+      <view class='img'></view>
+      <view class='columl'>
+        <view class='tantitle'><text>￥158.00</text></view>
+        <view class='tankc'>库存<text>100000</text></view>
+      </view>
+      <text class='close' catchtap='hideModal'>×</text>
+    </view>
+    <view class='cont'>
+      <text>购买数量</text>
+      <view>加减的滴啊方</view>
+    </view>
+    <view class='bottom'>{{what ? '加入购物车':'立即购买'}}</view>
+  </view>
+</template>

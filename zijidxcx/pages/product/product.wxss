@@ -1,0 +1,82 @@
+/* pages/product/product.wxss */
+
+.prolist{
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+.pleft{
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  background: #ddd;
+}
+.pleft text{
+  font-size: 14px;
+  padding: 10rpx 0;
+  opacity: .8;
+}
+.prop{
+  background: #fff;
+}
+.bc{
+  color: #000093;
+}
+.proinfo{
+  position: absolute;
+  right: 0;
+  width: 80%;
+  height: 100%;
+  flex-wrap: wrap;
+}
+/* 右边商品信息展示 */
+.info{
+  display: flex;
+  height: 260rpx;
+  width: 100%;
+}
+.info .titi{
+  width: 50%;
+  height: 100%;
+}
+.info image{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.info .titp{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink:align-self;
+}
+.info .titp view{
+  height: 50%;
+  overflow: hidden;
+  display: flex;
+  font-size: 14px;
+}
+.info .titp .tittop{
+  align-items: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  
+}
+.info .titp .tittop text{
+  display: -webkit-box;
+   word-break: break-all;
+  text-overflow: ellipsis;
+  font-size: 32rpx;
+  overflow: hidden;
+  line-height: 2;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+}
+.info .titp .titbot{
+  display: flex;
+  align-items: center;
+}

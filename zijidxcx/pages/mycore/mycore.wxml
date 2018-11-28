@@ -1,0 +1,23 @@
+<!-- 引入公共模板-轮播图 -->
+<import src="/pages/complete/complete" />
+<!--pages/mycore/mycore.wxml-->
+<view class='mycore'>
+  <!-- 个人中心背景部分 -->
+  <view class='bg'>
+    <!-- 个人中心的用户头像 -->
+    <view class='headImg'>
+      <image class='myImg' mode='aspectFill' lazy-load></image>
+    </view>
+    <!-- 个人中心的用户头像 -->
+    <!-- 个人中心点击跳转到个人信息详情 -->
+    <text class='arrow myInfo' catchtap='toMyinfo'></text>
+    <!-- 个人中心点击跳转到个人信息详情 -->
+  </view>
+  <!-- 个人中心背景部分结束 -->
+  <!-- 电商订单部分开始 -->
+  <view class='order'>
+    <text class='divider'>电商订单</text>
+    <template is="myNine" data="{{mynine}}" />
+  </view>
+  <!-- 电商订单部分结束 -->
+</view>

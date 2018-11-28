@@ -1,0 +1,21 @@
+<!--屏幕背景变暗的背景 -->
+<view class="commodity_screen" wx:if="{{showModalStatus}}"></view>
+<!--弹出框 -->
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class='tank divider'>
+    <view class='img'></view>
+    <view class='columl'>
+      <view class='tantitle'><text>￥158.00</text></view>
+      <view class='tankc'>库存<text>100000</text></view>
+    </view>
+    <text class='close' catchtap='hideModal'>×</text>
+  </view>
+  <view class='cont'>
+    <text>购买数量</text>
+    <view>加减的滴啊方</view>
+  </view>
+  <view class='bottom'>{{what ? '加入购物车':'立即购买'}}</view>
+</view>
+
+<button bindtap="showModal">点击1</button>
+<button bindtap="cc" >点击二</button>

@@ -1,0 +1,70 @@
+<!--pages/info/info.wxml-->
+<import src="/pages/complete/complete" />
+<view class='info' wx:for="{{pro}}" wx:key="{{item.id}}">
+  <view class='infotop'>
+    <template is="banner" data="{{list}}"/>
+    <view class='ope'>
+      <text class='iconfont icon-fenxiang'></text>
+      <text class='iconfont icon-dianpu' catchtap='tohomoe'></text>
+      <text class='iconfont icon-dingdan'></text>
+    </view>
+  </view>
+  <view class='allinfo'>
+    <view class='infot'>
+      <text class='intit'>{{item.title}}</text>
+    </view>
+    <view class='inprice'>
+      <text class='price'>￥{{item.price}}</text>
+    </view>
+    <view class='frs'>
+      <text class='fr'>运费:{{item.yf}}</text>
+      <text class='s'>库存:{{item.kc}}</text>
+    </view>
+  </view>
+  <view class='details'>
+    <text>——</text>
+    <text class='iconfont icon-31tuwenxiangqing'></text>
+    <text class='fontinfo'>详情</text>
+    <text>——</text>
+  </view>
+  <view class='divider'>产品详情</view>
+  <view class='introduce'>
+    <view class='words' wx:if="{{item.info}}">
+      {{item.info}}
+    </view>
+    <view class='img'>
+      <image wx:for="{{infolist}}" wx:key="{{index}}" src='{{item}}' mode='aspectFill' lazy-load></image>
+    </view>
+  </view>
+  <view class='bott'>
+    <view class='shopcart' catchtap='tocart'>
+      <text class='iconfont icon-gouwuche'></text>
+      <text>购物车</text>
+    </view>
+    <view class='customer'>
+      <text class='iconfont icon-kefu'></text>
+      <text>客服</text>
+    </view>
+    <view class='addcart' data-h='a' catchtap='showModal'>加入购物车</view>
+    <view class='buy' data-h='b' catchtap='showModal'>立即购买</view>
+  </view>
+<!--屏幕背景变暗的背景 -->
+  <view class="commodity_screen" wx:if="{{showModalStatus}}"></view>
+  <!--弹出框 -->
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view class='tank divider'>
+      <view class='img'></view>
+      <view class='columl'>
+        <view class='tantitle'><text>￥158.00</text></view>
+        <view class='tankc'>库存<text>100000</text></view>
+      </view>
+      <text class='close' catchtap='hideModal'>×</text>
+    </view>
+    <view class='cont'>
+      <text>购买数量</text>
+      <template is="count" data="{{count}}"/>
+    </view>
+    <view class='bottom'>{{what ? '加入购物车':'立即购买'}}</view>
+  </view>
+</view>
+

@@ -1,0 +1,48 @@
+<import src="/pages/complete/complete" />
+<!--pages/home/home.wxml-->
+<view>
+<!-- 将来要替换的轮播图模块 -->
+  <template is="banner" data="{{list}}"/>
+<!-- 将来要替换的轮播图模块结束 -->
+<!-- 分割块 -->
+  <view class='divider'>
+      <view class='page_row' bindtap="suo">
+    <view class="search">
+      <view class="df search_arr">
+          <icon class="searchcion" size='20' type='search'></icon>
+          <input class="" disabled placeholder="请输入搜索内容"/>
+        </view>
+      </view>
+      <view class='sousuo'>搜索</view>
+    </view>
+  </view>
+<!-- 九宫格开始 -->
+  <template is="jiugongge" data="{{jiu}}" />
+  <!-- 九宫格结束 -->
+  <!-- 热卖推荐开始 -->
+    <view class='hot'>
+      <image src='http://localhost:3/img/home/ysxx.png' mode='aspectFill' lazy-load></image>
+      <text>热卖推荐</text>
+      <image src='http://localhost:3/img/home/ysxx.png' mode='aspectFill' lazy-load></image>
+    </view>
+  <!-- 热卖推荐结束 -->
+</view>
+<!-- 循环展示商品 -->
+<view class='product'>
+  <view class='product-item ell' catchtap='toproinfo' wx:for="{{pro}}" wx:key="{{item.id}}" data-id='{{item.id}}'>
+    <image src='{{item.pic}}' lazy-load></image>
+    <text class='title'>{{item.title}}</text>
+    <view>
+      <text class='price'>￥{{item.price}}</text>
+      <text class='sales'>销量:{{item.volume}}</text>
+    </view>
+  </view>
+  <!-- <view class='product-item' bindtap='toproductinfo'>
+    <image src='http://localhost:3/img/home/2.png' mode='aspectFill' lazy-load></image>
+    <text class='title'>日本进口材料14K金包9...</text>
+    <text class='price'>￥158</text>
+    <text class='sales'>销量:0</text>
+  </view> -->
+</view>
+<!-- 循环展示商品结束 -->
+

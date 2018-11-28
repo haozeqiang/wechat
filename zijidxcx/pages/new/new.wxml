@@ -1,0 +1,5 @@
+<!--pages/new/new.wxml-->
+<import src="/pages/complete/complete" />
+<view class='hot'>
+  <template is="oddpro" data="{{pro,ftitle}}"/>
+</view>

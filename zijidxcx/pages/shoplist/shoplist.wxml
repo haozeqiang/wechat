@@ -1,0 +1,19 @@
+<!--pages/shoplist/shoplist.wxml-->
+<view class='prolist' wx:for='{{pro}}' wx:key='{{item.id}}'>
+  <text class='protitle'>{{item.ftitle}}</text>
+  <view class='proinfo' bindtap='toproinfo' data-idx='{{item.id}}'>
+    <image src='{{item.pic}}' mode='aspectFill' lazy-load></image>
+    <view class='shopinfo'>
+      <view class='shoptitle'>
+        <text class='title'>{{item.title}}</text>
+      </view>
+      <view class='shopprice'>
+        <text class='price'>￥{{item.price}}</text>
+      </view>
+      <view class='shopbottom'>
+        <text class='shopcount'>销量：{{item.volume}}</text>
+        <text class='iconfont icon-jiarugouwuche' catchtap='addcart' data-id="{{item.id}}"></text>
+      </view>
+    </view>
+  </view> 
+</view>

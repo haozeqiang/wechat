@@ -1,0 +1,42 @@
+<!--pages/cart/cart.wxml-->
+<import src="/pages/complete/complete" />
+<view class='cart'>
+  <view class='carttop'>
+    <text>购物车</text>
+    <text class='edit' bindtap='showdel'>{{isdel ? '编辑':'完成'}}</text>
+  </view>
+  <view class='del' hidden="{{isdel}}">
+    <view class='allsel'>
+      <checkbox-group class="botinp" bindchange="checkboxChange" data-index="{{index}}" data-checks="{{item.checks}}">
+        <checkbox data-index="{{index}}" id="2" value="{{item.name}}" checked="{{item.checks}}"/>
+      </checkbox-group>
+      <text class='select'>全选</text>
+    </view>
+    <text class='resu'>删除所选</text>
+  </view>
+  <view class="{{isdel ? 'cartinfo':'cartinfo seladdr'}}">
+    <view class='info divider'>
+      <checkbox-group bindchange="checkboxChange" data-index="{{index}}" data-checks="{{item.checks}}">
+        <checkbox data-index="{{index}}" id="2" value="{{item.name}}" checked="{{item.checks}}"/>
+      </checkbox-group>
+      <image src='' mode='aspectFill' lazy-load></image>
+      <view class='content'>
+        <text class='title'>这是一个标题dddddddddd</text>
+        <text class='price'>价格￥</text>
+      </view>
+      <template is="count" data="{{count}}" />
+    </view>
+  </view>
+  <view class='cartbot'>
+    <view class='allsel'>
+      <checkbox-group class="botinp" bindchange="checkboxChange" data-index="{{index}}" data-checks="{{item.checks}}">
+        <checkbox data-index="{{index}}" id="2" value="{{item.name}}" checked="{{item.checks}}"/>
+      </checkbox-group>
+      <text class='select'>全选</text>
+    </view>
+    <view class='proprice'>
+      <text class='sum'>合计:<text class='allprice'>￥88444.00</text></text>
+      <text class='resu'>结算(<text>144</text>)</text>
+    </view>
+  </view>
+</view>

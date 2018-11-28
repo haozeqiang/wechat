@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/info/info",
+    "pages/cs/cs",
+    "pages/product/product",
+    "pages/cart/cart",
+    "pages/hot/hot",
+    "pages/shoplist/shoplist",
+    "pages/mycore/mycore",
+    "pages/search/search",
+    "pages/productInfo/productinfo",
+    "pages/new/new",
+    "pages/pro/pro",
+    "pages/about/about"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#929292",
+    "selectedColor": "skyblue",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "public/img/shouye-weixuanzhong.png",
+        "selectedIconPath": "public/img/shouye-xuanzhong.png"
+      },
+      {
+        "pagePath": "pages/product/product",
+        "text": "商品",
+        "iconPath": "public/img/shangpin-weixuanzhong.png",
+        "selectedIconPath": "public/img/shangpin-xuanzhong.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "public/img/gouwuche-weixuanzhong.png",
+        "selectedIconPath": "public/img/gouwuche-xuanzhong.png"
+      },
+      {
+        "pagePath": "pages/mycore/mycore",
+        "text": "我的",
+        "iconPath": "public/img/wode-weixuanzhong.png",
+        "selectedIconPath": "public/img/wode-xuanzhong.png"
+      }
+    ]
+  }
+}

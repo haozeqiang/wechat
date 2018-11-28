@@ -1,0 +1,129 @@
+/* pages/cart/cart.wxss */
+page{
+  background: #fff;
+}
+.carttop{
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1rpx solid #ccc;
+  font-size: 16px;
+  text-align: center;
+  line-height: 100rpx;
+  position: fixed;
+  background-color: #f1f1f1;
+  z-index: 1;
+}
+.carttop .edit{
+  font-size: 14px;
+  position: absolute;
+  right: 20rpx;
+}
+checkbox-group{
+  display: inline-block;
+  margin-top:100rpx;
+  margin-left:40rpx;
+
+}
+.info{
+  display: flex;
+  height: 250rpx;
+  position: relative;
+}
+.info image{
+  width: 35%;
+  height: 100%;
+  padding: 15rpx;
+  box-sizing: border-box;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+
+}
+.procount{
+  font-size: 15px;
+  height: 55rpx;
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  overflow: hidden;
+}
+.procount text{
+  padding: 10rpx;
+  background: #ddd;
+  margin-right:5rpx; 
+}
+.content text{
+  line-height: 2rem;
+}
+.procount .count{
+  padding: 10rpx 30rpx;
+}
+.procount .ofadd{
+  padding: 10rpx 24rpx;
+}
+.procount .add{
+  padding: 10rpx 20rpx;
+}
+/* 购物车底部 */
+.cartbot{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  border-top: 1rpx solid #ddd;
+  display: flex;
+  font-size: 15px;
+  background-color: #fff;
+}
+.botinp{
+  margin-top: 25rpx;
+}
+.allsel{
+  height: 100%;
+}
+.proprice{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.allprice{
+  color: orangered;
+}
+.sum{
+  padding: 20rpx;
+}
+.resu{
+  padding: 20rpx 30rpx;
+  background: red;
+  color: #fff;
+  border-radius: 5rpx;
+  position: relative;
+  right: 15rpx;
+}
+.del{
+  position: fixed;
+  top: 100rpx;
+  display: flex;
+  overflow: hidden;
+  height: 100rpx;
+  width: 100%;
+  font-size: 15px;
+  align-items: center;
+  background-color: #fff;
+  z-index: 1;
+}
+.del .resu{
+  position: absolute;
+}
+.cartinfo{
+  padding-top:100rpx;
+}
+.seladdr{
+  padding-top: 200rpx;
+}

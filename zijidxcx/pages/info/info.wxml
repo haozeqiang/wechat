@@ -51,12 +51,14 @@
 <!--屏幕背景变暗的背景 -->
   <view class="commodity_screen" wx:if="{{showModalStatus}}"></view>
   <!--弹出框 -->
-  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}" wx:for="{{pro}}" wx:key="item.id">
     <view class='tank divider'>
-      <view class='img'></view>
+      <view class='img'>
+        <image src='{{item.pic}}' mode='aspectFill' lazy-load></image>
+      </view>
       <view class='columl'>
-        <view class='tantitle'><text>￥158.00</text></view>
-        <view class='tankc'>库存<text>100000</text></view>
+        <view class='tantitle'><text>￥{{item.title}}</text></view>
+        <view class='tankc'>库存<text>{{item.kc}}</text></view>
       </view>
       <text class='close' catchtap='hideModal'>×</text>
     </view>
@@ -64,7 +66,7 @@
       <text>购买数量</text>
       <template is="count" data="{{count}}"/>
     </view>
-    <view class='bottom'>{{what ? '加入购物车':'立即购买'}}</view>
+    <view class='bottom' catchtap='tocart'>{{what ? '加入购物车':'立即购买'}}</view>
   </view>
 </view>
 

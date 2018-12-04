@@ -27,13 +27,14 @@ function addcart(e){
 }
 
 // 点击增加和修改商品的数量
-function ofadd(e) {
+/*function ofadd(e) {
   console.log('设置数量减少')
 }
 
 function add(e) {
   console.log('设置数量增加')
-}
+  console.log(e)
+}*/
 
 
 // 点击显示加入购物车和立即购买的按钮，去往的路径等待设置
@@ -87,8 +88,8 @@ module.exports = {
   formatTime: formatTime,
   toproinfo,
   addcart,
-  ofadd,
-  add,
+  //ofadd,
+  //add,
   //hideModal,
   //showModal,
 }

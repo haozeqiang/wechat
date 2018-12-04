@@ -16,15 +16,14 @@ Page({
     count:1,
     list: [],
   },
-  add: function (e) {
+  /*add: function (e) {
     util.add(e);
   },
   ofadd: function (e) {
     util.ofadd(e);
-  },
+  },*/
   //显示对话框
   showModal: function (e) {
-    console.log(e.target.dataset.h)
     if (e.target.dataset.h==='a'){
       this.setData({what:true})
       }else{
@@ -77,13 +76,10 @@ Page({
     wx.request({
       url: 'http://127.0.0.1:3/proinfo?id='+id,
       success:(res)=>{
-        //if(res.data[0].info===null){this.setData({words:false})}
-        //console.log(res.data[0].info === null)
-        //console.log(res.data[0]);
         this.setData({pro:res.data})
-        //console.log(res.data[0].banpic.split(','))
         this.setData({ list: res.data[0].banpic.split(',')})
         this.setData({ infolist: res.data[0].infopic.split(',')})
+        //console.log(this.data.pro)
       }
     })
   },
@@ -92,6 +88,38 @@ Page({
     wx.reLaunch({
       url: '/pages/home/home',
     })
+  },
+
+  //3.点击加减实现数量的改变
+  add: function(e) {
+    this.setData({count:++this.data.count})
+  },
+  ofadd: function (e) {
+    if (this.data.count <2) {
+       return;
+      }else{
+      this.setData({ count: --this.data.count })
+    }
+  },
+  //4.点击向购物车数据库添加数据
+  tocart:function(e){
+    let id = this.data.pro[0].id,
+        sl=this.data.count,
+        pic=this.data.pro[0].pic,
+        title=this.data.pro[0].title,
+        price=this.data.pro[0].price;
+    wx.request({
+      url: 'http://127.0.0.1:3/chcart',
+      data: { id, sl, pic, title, price }
+    })
+    success: (res) => {
+      
+    }
+    this.hideModal();
+    wx.showToast({
+      title: '添加成功',
+      icon: 'success',
+    });
   },
   /**
    * 生命周期函数--监听页面加载

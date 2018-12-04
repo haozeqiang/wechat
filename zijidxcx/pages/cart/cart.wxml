@@ -15,14 +15,14 @@
     <text class='resu'>删除所选</text>
   </view>
   <view class="{{isdel ? 'cartinfo':'cartinfo seladdr'}}">
-    <view class='info divider'>
+    <view class='info divider' wx:for="{{cartlist}}" wx:key="index">
       <checkbox-group bindchange="checkboxChange" data-index="{{index}}" data-checks="{{item.checks}}">
         <checkbox data-index="{{index}}" id="2" value="{{item.name}}" checked="{{item.checks}}"/>
       </checkbox-group>
-      <image src='' mode='aspectFill' lazy-load></image>
+      <image src='{{item.pic}}' mode='aspectFill' lazy-load></image>
       <view class='content'>
-        <text class='title'>这是一个标题dddddddddd</text>
-        <text class='price'>价格￥</text>
+        <text class='title'>{{item.title}}</text>
+        <text class='price'>价格￥{{item.price}}</text>
       </view>
       <template is="count" data="{{count}}" />
     </view>
